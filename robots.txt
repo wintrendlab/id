@@ -1,4 +1,5 @@
 User-agent: *
-Allow: /
+Disallow:
 
+Host: https://wintrendlab.github.io/id/
 Sitemap: https://wintrendlab.github.io/id/sitemap.xml
