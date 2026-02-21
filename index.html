@@ -18,7 +18,7 @@
 <meta name="publisher" content="WinTrendLab">
 
 <!-- Favicon -->
-<link rel="icon" href="https://wintrendlab.github.io/id/img/icon.png" type="image/png">
+<link rel="icon" href="https://wintrendlab.github.io/id/img/favicon.png" type="image/png">
 
 <!-- Open Graph -->
 <meta property="og:title" content="WinTrendLab – Gaming Trends & RTP Insights">
@@ -41,74 +41,182 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
-body {
+
+*{
+    box-sizing:border-box;
+}
+
+body{
     margin:0;
     font-family:'Inter',sans-serif;
     background:#0f172a;
     color:#ffffff;
+    line-height:1.6;
 }
-header {
-    background:linear-gradient(135deg,#0ea5e9,#22c55e);
-    padding:60px 20px;
-    text-align:center;
-}
-header h1 {
-    margin:0;
-    font-size:42px;
-}
-header p {
-    margin-top:10px;
-    font-size:18px;
-}
-nav {
+
+/* NAVBAR */
+nav{
     background:#111827;
-    padding:15px;
-    text-align:center;
+    padding:15px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
 }
-nav a {
+
+.nav-links{
+    display:flex;
+    gap:20px;
+}
+
+nav a{
     color:#ffffff;
-    margin:0 15px;
     text-decoration:none;
     font-weight:600;
-}
-section {
-    padding:60px 20px;
-    max-width:1100px;
-    margin:auto;
-}
-.card {
-    background:#1e293b;
-    padding:30px;
-    border-radius:12px;
-    margin-bottom:30px;
-    transition:0.3s;
-}
-.card:hover {
-    transform:translateY(-5px);
-}
-footer {
-    text-align:center;
-    padding:30px;
-    background:#111827;
     font-size:14px;
 }
-button {
-    background:#22c55e;
+
+/* HERO */
+header{
+    text-align:center;
+    padding:80px 20px 60px 20px;
+    background:linear-gradient(135deg,#0ea5e9,#22c55e);
+}
+
+header h1{
+    margin:0;
+    font-size:42px;
+    max-width:800px;
+    margin:auto;
+}
+
+header p{
+    margin-top:15px;
+    font-size:18px;
+    opacity:0.9;
+}
+
+.hero-image{
+    max-width:100%;
+    border-radius:16px;
+    margin-top:30px;
+    box-shadow:0 20px 40px rgba(0,0,0,0.3);
+}
+
+.hero-wrapper{
+    position:relative;
+    display:flex;
+    justify-content:center;
+    margin-top:40px;
+}
+
+.hero-overlay-top{
+    position:absolute;
+    top:20px;              /* jarak dari atas gambar */
+    left:50%;
+    transform:translateX(-50%);
+}
+
+.hero-btn{
+    background:#16a34a;
     border:none;
-    padding:12px 25px;
+    padding:15px 35px;
     color:#fff;
-    border-radius:8px;
+    border-radius:12px;
     font-weight:600;
     cursor:pointer;
+    font-size:16px;
+    margin-top:25px;
+    transition:0.3s;
+    box-shadow:0 8px 20px rgba(0,0,0,0.3);
 }
-button:hover {
+
+.hero-btn:hover{
+    background:#15803d;
+    transform:scale(1.05);
+}
+
+/* BUTTON */
+button{
     background:#16a34a;
+    border:none;
+    padding:14px 30px;
+    color:#fff;
+    border-radius:10px;
+    font-weight:600;
+    cursor:pointer;
+    margin-top:25px;
+    font-size:15px;
 }
-.hero-image {
-    max-width:100%;
-    border-radius:12px;
-    margin-top:20px;
+
+button:hover{
+    background:#15803d;
 }
+
+/* CONTENT SECTION */
+.section-wrapper{
+    max-width:1100px;
+    margin:auto;
+    padding:80px 20px;
+}
+
+.card-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:#1e293b;
+    padding:30px;
+    border-radius:16px;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+}
+
+.card h2{
+    margin-top:0;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:40px 20px;
+    background:#111827;
+    font-size:14px;
+    margin-top:40px;
+}
+
+/* MOBILE OPTIMIZATION */
+@media(max-width:768px){
+
+    header h1{
+        font-size:28px;
+    }
+
+    header p{
+        font-size:16px;
+    }
+
+    nav{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:10px;
+    }
+
+    .nav-links{
+        flex-wrap:wrap;
+        gap:10px;
+    }
+
+    button{
+        width:100%;
+    }
+}
+
 </style>
 
 <!-- Schema WebSite -->
@@ -134,42 +242,53 @@ button:hover {
 <body>
 
 <nav>
-<a href="https://wintrendlab.github.io/id/">Home</a>
-<a href="https://wintrendlab.github.io/id/">Insights</a>
-<a href="https://wintrendlab.github.io/id/">RTP Analysis</a>
-<a href="https://wintrendlab.github.io/id/">Gaming Trends</a>
-<a href="https://wintrendlab.github.io/id/">About</a>
+    <div><strong>WinTrendLab</strong></div>
+    <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">Insights</a>
+        <a href="#">RTP Analysis</a>
+        <a href="#">Gaming Trends</a>
+        <a href="#">About</a>
+    </div>
 </nav>
 
 <header>
-<h1>WinTrendLab – Gaming Trends & RTP Data Intelligence Platform</h1>
-<p>Data Insights & Gaming Trend Intelligence</p>
-<br>
-<button>Explore Latest Reports</button>
+    <h1>WinTrendLab – Gaming Trends & RTP Data Intelligence Platform</h1>
+    
+    <p class="hero-subtitle">
+        Data Insights & Gaming Trend Intelligence for the Digital Entertainment Industry
+    </p>
 
-<img src="https://wintrendlab.github.io/id/img/wintrendlab.jpg"
-alt="WinTrendLab Gaming Trends Data Analytics"
-width="1200"
-height="630"
-class="hero-image">
+    <button class="hero-btn">Explore Latest Reports</button>
 
+    <div class="hero-wrapper">
+        <img src="https://wintrendlab.github.io/id/img/wintrendlab.jpg"
+        alt="WinTrendLab Gaming Trends Data Analytics"
+        width="1200"
+        height="630"
+        class="hero-image">
+    </div>
 </header>
 
-<section>
-<div class="card">
-<h2>Gaming Trend Analysis 2026</h2>
-<p>Discover data-driven insights on digital gaming growth, volatility movement, and player behavior patterns across global markets.</p>
-</div>
+<section class="section-wrapper">
+    <div class="card-grid">
 
-<div class="card">
-<h2>RTP Performance Insights</h2>
-<p>Structured research on return-to-player metrics, risk distribution, and industry performance benchmarks.</p>
-</div>
+        <div class="card">
+            <h2>Gaming Trend Analysis 2026</h2>
+            <p>Discover structured data insights on digital gaming growth, volatility movement, and player behavior patterns across global markets.</p>
+        </div>
 
-<div class="card">
-<h2>Industry Data Reports</h2>
-<p>Weekly research reports covering gaming volatility shifts and emerging digital entertainment trends.</p>
-</div>
+        <div class="card">
+            <h2>RTP Performance Insights</h2>
+            <p>Advanced research on return-to-player metrics, risk distribution, and statistical performance benchmarks.</p>
+        </div>
+
+        <div class="card">
+            <h2>Industry Data Reports</h2>
+            <p>Weekly analytics reports covering volatility shifts, digital performance indicators, and emerging gaming patterns.</p>
+        </div>
+
+    </div>
 </section>
 
 <footer>
